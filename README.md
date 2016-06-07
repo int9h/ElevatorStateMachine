@@ -1,6 +1,8 @@
 # ElevatorStateMachine
 
-Simple state pattern in php 
+This simple implementation explains the state pattern in php.
+
+## Example 
 
 ```
 $ php56 run.php     
@@ -20,3 +22,6 @@ Stack trace:
 #2 {main}                                                                                                                                                                                                       
   thrown in /home/manuel/NetBeansProjects/ElevatorStateMachine/Elevator/ElevatorState.php on line 18  
 ```
+
+Take a look at the run.php file to see what happened.
+
