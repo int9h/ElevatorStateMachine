@@ -8,17 +8,16 @@ namespace Elevator;
 
 class Elevator
 {
-    private $state;
+    protected $state;
     
-    function getState()
+    function getState(): ElevatorState
     {
         return $this->state;
     }
 
-    function setState(ElevatorStateInterface $state)
+    function setState(ElevatorStateInterface $state): void
     {
         $this->state = $state;
-        print "set state to : " . get_class($state) . PHP_EOL;
     }
     
     public function __construct()
@@ -26,27 +25,27 @@ class Elevator
         $this->setState(new \Elevator\State\Stop());
     }
     
-    public function isOpen()
+    public function isOpen(): bool
     {
         return $this->state instanceof \Elevator\State\Open;
     }
     
-    public function open()
+    public function open(): void
     {
         $this->setState($this->state->open());
     }
     
-    public function close()
+    public function close(): void
     {
         $this->setState($this->state->close());
     }
     
-    public function move()
+    public function move(): void
     {
         $this->setState($this->state->move());
     }
     
-    public function stop()
+    public function stop(): void
     {
         $this->setState($this->state->stop());
     }
