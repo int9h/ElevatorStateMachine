@@ -1,28 +1,27 @@
 <?php
-/** 
- * @author Manuel Wildauer <m.wildauer@gmail.com>
- */
 
 namespace Elevator\State;
 
-class Stop extends \Elevator\ElevatorState
+use Elevator\ElevatorState;
+
+class Stop extends ElevatorState
 {
-    public function open()
+    public function open(): Open
     {
         return new Open();
     }
     
-    public function close()
+    public function close(): Close
     {
         return new Close();
     }
     
-    public function move()
+    public function move(): Move
     {
         return new Move();
     }
     
-    public function stop()
+    public function stop(): Stop
     {
         return new Stop();
     }

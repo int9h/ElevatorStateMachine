@@ -1,33 +1,31 @@
 <?php
-/**
- * 
- * @author Manuel Wildauer <m.wildauer@gmail.com>
- */
-
 namespace Elevator;
+
+use Elevator\State\Open;
+use Elevator\State\Stop;
 
 class Elevator
 {
     protected $state;
     
-    function getState(): ElevatorState
+    public function getState(): ElevatorState
     {
         return $this->state;
     }
 
-    function setState(ElevatorStateInterface $state): void
+    public function setState(ElevatorStateInterface $state): void
     {
         $this->state = $state;
     }
     
     public function __construct()
     {
-        $this->setState(new \Elevator\State\Stop());
+        $this->setState(new Stop());
     }
     
     public function isOpen(): bool
     {
-        return $this->state instanceof \Elevator\State\Open;
+        return $this->state instanceof Open;
     }
     
     public function open(): void

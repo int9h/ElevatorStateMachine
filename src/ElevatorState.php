@@ -1,30 +1,32 @@
 <?php
-/**
- * 
- * @author Manuel Wildauer <m.wildauer@gmail.com>
- */
 
 namespace Elevator;
 
+use Elevator\Exception\IllegalStateTransitionException;
+use Elevator\State\Close;
+use Elevator\State\Move;
+use Elevator\State\Open;
+use Elevator\State\Stop;
+
 class ElevatorState implements ElevatorStateInterface
 {
-    public function close()
+    public function close(): Close
     {
-        throw new \Elevator\Exception\IllegalStateTransitionException();
+        throw new IllegalStateTransitionException();
     }
 
-    public function move()
+    public function move(): Move
     {
-        throw new \Elevator\Exception\IllegalStateTransitionException();
+        throw new IllegalStateTransitionException();
     }
 
-    public function open()
+    public function open(): Open
     {
-        throw new \Elevator\Exception\IllegalStateTransitionException();
+        throw new IllegalStateTransitionException();
     }
     
-    public function stop()
+    public function stop(): Stop
     {
-        throw new \Elevator\Exception\IllegalStateTransitionException();
+        throw new IllegalStateTransitionException();
     }
 }

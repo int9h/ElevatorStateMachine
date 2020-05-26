@@ -1,18 +1,16 @@
 <?php
-/**
- * @author Manuel Wildauer <m.wildauer@gmail.com>
- */
-
 namespace Elevator\State;
 
-class Open extends \Elevator\ElevatorState
+use Elevator\ElevatorState;
+
+class Open extends ElevatorState
 {
-    public function open()
+    public function open(): Open
     {
         return new Open();
     }
     
-    public function close()
+    public function close(): Close
     {
         return new Close();
     }

@@ -6,24 +6,26 @@
 
 namespace Elevator\State;
 
-class Close extends \Elevator\ElevatorState
+use Elevator\ElevatorState;
+
+class Close extends ElevatorState
 {
-    public function close()
+    public function close(): Close
     {
         return new Close();
     }
 
-    public function open()
+    public function open(): Open
     {
         return new Open();
     }
 
-    public function move()
+    public function move(): Move
     {
         return new Move();
     }
 
-    public function stop()
+    public function stop(): Stop
     {
         return new Stop();
     }
